@@ -34,8 +34,9 @@ converted_df <- getGeneSymbolDataframe(network_df, gene_symbols,
 organism = "hsapiens")
 
 # Get the list of the regulators with their interactors
-regulators <- getInteractorsList(converted_df, regulators_list)
+genes <- c("ADAR", "ADARB1")
+interactors <- getInteractorsList(converted_df, regulators_list, genes)
 
-writeAdjFile(regulators, file_name = "interactors")
+writeAdjFile(interactors, file_name = "interactors")
 
 }

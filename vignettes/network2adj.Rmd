@@ -52,8 +52,10 @@ converted_matrix <- getGeneSymbolMatrix(vsd_matrix, gene_symbols,
 
 ```{r}
 data(regulators_list)
-genes <- c["ADAR", "ADARB1"]
-interactors <- getInteractorsList(converted_df, regulators_list, genes)
+genes <- c("ADAR", "ADARB1")
+interactors <- getInteractorsList(dataf = converted_df, 
+                                  reg_dataf =  regulators_list, 
+                                  target_genes = genes)
 ```
 
 ## Get the adjacency matrix file as requested by VIPER

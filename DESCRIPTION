@@ -2,11 +2,12 @@ Package: network2adj
 Title: Creation of the adjacency matrix file needed to obtain the regulon for 
     the gene ADAR
 Version: 0.0.0.9000
-Authors@R: 
+Author: 
     person(given = "Francesca",
          family = "Marino",
          role = c("aut", "cre"),
          email = "francescamarino112@gmail.com")
+Maintainer: Francesca Marino <francescamarino112@gmail.com>
 Description: The package comprises some functions which, from a regulatory 
     network and a gene expression matrix obtained by RNA-Seq data and a list of 
     regulator genes, creates an .adj file needed by the package VIPER to create 

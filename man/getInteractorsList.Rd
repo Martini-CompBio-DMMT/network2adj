@@ -4,20 +4,25 @@
 \alias{getInteractorsList}
 \title{Get a list of genes with their interactors}
 \usage{
-getInteractorsList(dataf, genes)
+getInteractorsList(dataf, reg_dataf, target_genes)
 }
 \arguments{
 \item{dataf}{data frame obtained by the network}
 
-\item{genes}{list of known regulators of ADAR}
+\item{reg_dataf}{data frame with the information of the regulator genes}
+
+\item{target_genes}{list of the genes of interest}
 }
 \value{
 list
 }
 \description{
-This function is used to filter the data frame to consider only the
-regulators of ADAR and, for each regulator, obtain a list of their
-interactors and the corresponding scores.
+This function extracts from the data frame of regulators the list of the
+gene symbols, and it adds the genes for which we want to compute the
+activity with VIPER.
+Then it filters the data frame obtained by the network to consider only the
+regulators of the gene of interest and, for each regulator, it gets a list of
+their interactors and the corresponding scores.
 }
 \examples{
 
@@ -35,6 +40,7 @@ converted_df <- getGeneSymbolDataframe(network_df, gene_symbols,
 organism = "hsapiens")
 
 # Get the list of the regulators with their interactors
-regulators <- getInteractorsList(converted_df, regulators_list)
+genes <- c("ADAR", "ADARB1")
+interactors <- getInteractorsList(converted_df, regulators_list, genes)
 
 }

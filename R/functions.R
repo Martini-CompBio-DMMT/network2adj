@@ -195,9 +195,8 @@ getGeneSymbolMatrix <- function(vsd, symbols, organism = "") {
 #' organism = "hsapiens")
 #' 
 #' # Get the list of the regulators with their interactors
-#' genes <- c["ADAR", "ADARB1"]
-#' interactors <- getInteractorsList(converted_df, regulators_list, 
-#' genes)
+#' genes <- c("ADAR", "ADARB1")
+#' interactors <- getInteractorsList(converted_df, regulators_list, genes)
 #' 
 #' @import dplyr
 #' @export
@@ -209,8 +208,8 @@ getInteractorsList <- function(dataf, reg_dataf, target_genes) {
   
   df_new <- data.frame()
   for (g in genes_selected) {
-    df1 <- dataf %>% filter(dataf[, 1] == g)
-    df2 <- dataf %>% filter(dataf[, 2] == g)
+    df1 <- dataf %>% dplyr::filter(dataf[, 1] == g)
+    df2 <- dataf %>% dplyr::filter(dataf[, 2] == g)
     df2 <- df2[, c(2, 1, 3)]
     colnames(df2) <- c("from", "to", "weight")
     df3 <- rbind(df1, df2)
@@ -221,8 +220,8 @@ getInteractorsList <- function(dataf, reg_dataf, target_genes) {
   df_list <- lapply(df_list, function(dataf) {dataf[, -1]})
   
   lengths <- c()
-  for (tg in genes_selected) {
-    lengths <- c(lengths, dim(df_list$tg)[1])
+  for (tg in target_genes) {
+    lengths <- c(lengths, dim(df_list[[tg]])[1])
   }
   
   min_length <- min(lengths)
@@ -257,6 +256,7 @@ getInteractorsList <- function(dataf, reg_dataf, target_genes) {
 #' organism = "hsapiens")
 #' 
 #' # Get the list of the regulators with their interactors
+#' genes <- c("ADAR", "ADARB1")
 #' interactors <- getInteractorsList(converted_df, regulators_list, genes)
 #'
 #' writeAdjFile(interactors, file_name = "interactors")
