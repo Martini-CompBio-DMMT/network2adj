@@ -1,0 +1,36 @@
+#' Example Expression Matrix
+#'
+#' Expression matrix with normalized values of a H. Sapiens dataset.
+#'
+#' @format Matrix with rows representing genes and columns representing samples.
+#' @source GEO - GSE54152
+
+"vsd_matrix"
+
+#' Example Data Frame
+#'
+#' Data frame obtained from the network computed from the expression matrix.
+#'
+#' @format Data frame
+#' \describe{
+#'   \item{from}{Character, gene ID}
+#'   \item{to}{Character, gene ID}
+#'   \item{weight}{Numeric, weight of the edge}
+#' }
+#' @source generated from the example expression matrix
+
+"network_df"
+
+#' Example Regulators List
+#'
+#' List of ADAR regulators.
+#'
+#' @format Data frame
+#' \describe{
+#'   \item{gene}{Numeric, gene indicator}
+#'   \item{type}{Character, type of regulator}
+#'   \item{symbols}{Character, gene symbol}
+#' }
+#' @source generated for the example
+
+"regulators_list"
