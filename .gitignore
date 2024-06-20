@@ -1,2 +1,5 @@
 .Rproj.user
 inst/doc
+vignettes/interactors.adj
+vignettes/interactors.txt
+network2adj.Rproj
