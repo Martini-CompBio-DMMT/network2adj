@@ -32,7 +32,7 @@ data(vsd_matrix)
 gene_symbols <- getGeneSymbols(network_df, organism = "hsapiens")
 
 # Get the converted matrix
-converted_matrix <- getGeneSymbolMatrix(vsd_matrix, gene_symbols, 
+converted_matrix <- getGeneSymbolMatrix(vsd_matrix, gene_symbols,
 organism = "hsapiens")
 
 }

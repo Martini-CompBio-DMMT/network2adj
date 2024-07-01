@@ -24,6 +24,13 @@ The package comprises some functions which, from a regulatory network and a gene
 expression matrix obtained by RNA-Seq data and a list of regulator genes, 
 creates an .adj file needed by the package VIPER to create the regulon object.
 
+## Get the data frame from the network obtained by the network reconstruction with ARACNe
+
+```{r}
+data(network)
+net_df <- getDf(network)
+```
+
 ## Get the gene symbols corresponding to the gene Ensembl IDs in the data frame
 
 ```{r}

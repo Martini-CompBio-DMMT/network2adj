@@ -1,3 +1,31 @@
+#' Get the data frame from the network
+#'
+#' This function is used to get a data frame from the file obtained by the
+#' network reconstruction with ARACNe.
+#'
+#' @usage getDf(net)
+#' @param net network obtained from ARACNe
+#' @return data frame
+#' @examples
+#'
+#' # Load the example network
+#' data(network)
+#'
+#' # Get the data frame from the network obtained by ARACNe
+#' net_df <- getDf(network)
+#'
+#' @importFrom igraph graph.adjacency get.data.frame
+#' @export
+
+getDf <- function(net) {
+
+  g  <- graph.adjacency(net, weighted=TRUE, mode="undirected")
+  dataf <- get.data.frame(g)
+
+  dataf
+
+}
+
 #' Get gene symbols
 #'
 #' This function is used to get the human gene symbols from the gene Ensembl

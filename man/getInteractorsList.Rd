@@ -36,7 +36,7 @@ data(network_df)
 gene_symbols <- getGeneSymbols(network_df, organism = "hsapiens")
 
 # Get the converted data frame
-converted_df <- getGeneSymbolDataframe(network_df, gene_symbols, 
+converted_df <- getGeneSymbolDataframe(network_df, gene_symbols,
 organism = "hsapiens")
 
 # Get the list of the regulators with their interactors
