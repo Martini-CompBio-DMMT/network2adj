@@ -14,13 +14,13 @@
 #' # Get the data frame from the network obtained by ARACNe
 #' net_df <- getDf(network)
 #'
-#' @importFrom igraph graph.adjacency get.data.frame
+#' @importFrom igraph graph_from_adjacency_matrix as_data_frame
 #' @export
 
 getDf <- function(net) {
 
-  g  <- graph.adjacency(net, weighted=TRUE, mode="undirected")
-  dataf <- get.data.frame(g)
+  g  <- graph_from_adjacency_matrix(net, weighted=TRUE, mode="undirected")
+  dataf <- as_data_frame(g)
 
   dataf
 
