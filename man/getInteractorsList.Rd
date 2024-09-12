@@ -4,12 +4,12 @@
 \alias{getInteractorsList}
 \title{Get a list of genes with their interactors}
 \usage{
-getInteractorsList(dataf, reg_dataf, target_genes)
+getInteractorsList(dataf, reg_list, target_genes)
 }
 \arguments{
 \item{dataf}{data frame obtained by the network}
 
-\item{reg_dataf}{data frame with the information of the regulator genes}
+\item{reg_list}{list with the regulator genes}
 
 \item{target_genes}{list of the genes of interest}
 }
@@ -17,9 +17,8 @@ getInteractorsList(dataf, reg_dataf, target_genes)
 list
 }
 \description{
-This function extracts from the data frame of regulators the list of the
-gene symbols, and it adds the genes for which we want to compute the
-activity with VIPER.
+This function extracts gets the list of regulators, and it adds the genes
+for which we want to compute the activity with VIPER.
 Then it filters the data frame obtained by the network to consider only the
 regulators of the gene of interest and, for each regulator, it gets a list of
 their interactors and the corresponding scores.

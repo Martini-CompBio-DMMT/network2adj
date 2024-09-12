@@ -5,12 +5,7 @@
 \alias{regulators_list}
 \title{Example Regulators List}
 \format{
-Data frame
-\describe{
-\item{gene}{Numeric, gene indicator}
-\item{type}{Character, type of regulator}
-\item{symbols}{Character, gene symbol}
-}
+List
 }
 \source{
 generated for the example

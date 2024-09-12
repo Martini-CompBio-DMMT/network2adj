@@ -25,12 +25,7 @@
 #'
 #' List of ADAR regulators.
 #'
-#' @format Data frame
-#' \describe{
-#'   \item{gene}{Numeric, gene indicator}
-#'   \item{type}{Character, type of regulator}
-#'   \item{symbols}{Character, gene symbol}
-#' }
+#' @format List
 #' @source generated for the example
 
 "regulators_list"

@@ -61,7 +61,7 @@ converted_matrix <- getGeneSymbolMatrix(vsd_matrix, gene_symbols,
 data(regulators_list)
 genes <- c("ADAR", "ADARB1")
 interactors <- getInteractorsList(dataf = converted_df, 
-                                  reg_dataf =  regulators_list, 
+                                  reg_list =  regulators_list, 
                                   target_genes = genes)
 ```
 

@@ -194,16 +194,15 @@ getGeneSymbolMatrix <- function(vsd, symbols, organism = "") {
 
 #' Get a list of genes with their interactors
 #'
-#' This function extracts from the data frame of regulators the list of the
-#' gene symbols, and it adds the genes for which we want to compute the
-#' activity with VIPER.
+#' This function extracts gets the list of regulators, and it adds the genes
+#' for which we want to compute the activity with VIPER.
 #' Then it filters the data frame obtained by the network to consider only the
 #' regulators of the gene of interest and, for each regulator, it gets a list of
 #' their interactors and the corresponding scores.
 #'
-#' @usage getInteractorsList(dataf, reg_dataf, target_genes)
+#' @usage getInteractorsList(dataf, reg_list, target_genes)
 #' @param dataf data frame obtained by the network
-#' @param reg_dataf data frame with the information of the regulator genes
+#' @param reg_list list with the regulator genes
 #' @param target_genes list of the genes of interest
 #' @return list
 #' @examples
@@ -228,10 +227,9 @@ getGeneSymbolMatrix <- function(vsd, symbols, organism = "") {
 #' @importFrom dplyr filter
 #' @export
 
-getInteractorsList <- function(dataf, reg_dataf, target_genes) {
+getInteractorsList <- function(dataf, reg_list, target_genes) {
 
-  genes_selected <- reg_dataf[, 3]
-  genes_selected <- c(genes_selected, target_genes)
+  genes_selected <- c(reg_list, target_genes)
 
   df_new <- data.frame()
   for (g in genes_selected) {
